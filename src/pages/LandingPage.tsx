@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, Shield } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import TextType from './TextType';
 
