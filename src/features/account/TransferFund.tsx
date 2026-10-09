@@ -11,6 +11,9 @@ const TransferFund = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+
+  const API_BASE_URL = "https://banking-backend-re7q.onrender.com";
+
   const [formData, setFormData] = useState<TransferFundProps>({
     fromAccountId: 0,
     toAccountId: 0,
@@ -33,8 +36,7 @@ const TransferFund = () => {
     try {
       console.log(formData);
 
-      const response = await axios.post(
-        "http://localhost:8087/transferAmount",
+      const response = await axios.post(`${API_BASE_URL}/transferAmount`,
         null,
         {
           params: {
