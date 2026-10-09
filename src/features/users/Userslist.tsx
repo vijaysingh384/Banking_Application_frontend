@@ -6,12 +6,7 @@ interface User {
   name: string;
 }
 
-interface ResponseDTO {
-  Statuscode: number;
-  dtos: User[];
-  error: boolean;
-  message: string;
-}
+
 
 const UsersList = () => {
   const [users, setUsers] = useState<User[]>([]);

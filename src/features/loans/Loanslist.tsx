@@ -7,12 +7,6 @@ interface Loan {
   sanctionAmount: number;
 }
 
-interface ResponseDTO {
-  Statuscode: number;
-  loandtos: Loan[];
-  error: boolean;
-  message: string;
-}
 
 const LoansList = () => {
   const [loans, setLoans] = useState<Loan[]>([]);

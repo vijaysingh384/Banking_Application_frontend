@@ -7,12 +7,7 @@ interface Account {
   balance: number;
 }
 
-interface ResponseDTO {
-  Statuscode: number;
-  accountdtos: Account[];
-  error: boolean;
-  message: string;
-}
+
 
 const AccountsList = () => {
   const [accounts, setAccounts] = useState<Account[]>([]);
