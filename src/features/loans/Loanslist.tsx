@@ -19,15 +19,16 @@ const LoansList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  const API_BASE_URL = "https://banking-backend-re7q.onrender.com";
+
   useEffect(() => {
     fetchLoans();
   }, []);
   
   const fetchLoans = async () => {
       try {
-        const response = await axios.get<ResponseDTO>(
-          "http://localhost:8087/loans"
-        );
+        const response = await axios.get(`${API_BASE_URL}/loans`);
+        
 
         console.log(response.data);
         setLoans(response.data.loandtos);

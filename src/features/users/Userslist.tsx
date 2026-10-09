@@ -18,15 +18,16 @@ const UsersList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+
+  const API_BASE_URL = "https://banking-backend-re7q.onrender.com";
+
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get<ResponseDTO>(
-        "http://localhost:8087/users"
-      );
+      const response = await axios.get(`${API_BASE_URL}/users`);
 
       console.log("Response:", response.data);
 

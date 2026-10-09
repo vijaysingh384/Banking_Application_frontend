@@ -19,15 +19,16 @@ const AccountsList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  const API_BASE_URL = "https://banking-backend-re7q.onrender.com";
+
   useEffect(() => {
     fetchAccounts();
   }, []);
 
   const fetchAccounts = async () => {
     try {
-      const response = await axios.get<ResponseDTO>(
-        "http://localhost:8087/accounts"
-      );
+      const response = await axios.get(`${API_BASE_URL}/accounts`);
+      
 
       console.log(response.data);
 
