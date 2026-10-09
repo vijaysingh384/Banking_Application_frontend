@@ -16,6 +16,9 @@ const GetLoan = () => {
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
+
+  const API_BASE_URL = "https://banking-backend-re7q.onrender.com";
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
@@ -30,8 +33,7 @@ const GetLoan = () => {
     setMessage("");
 
     try {
-      const response = await axios.post(
-        "http://localhost:8087/loan",
+      const response = await axios.post(`${API_BASE_URL}/loan`,
         formData,
         {
         params: {

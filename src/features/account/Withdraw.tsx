@@ -16,6 +16,10 @@ const Withdraw = () => {
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
+
+
+  const API_BASE_URL = "https://banking-backend-re7q.onrender.com";
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
@@ -30,8 +34,7 @@ const Withdraw = () => {
     setMessage("");
 
     try {
-      const response = await axios.post(
-        "http://localhost:8087/withdrawMoney",
+      const response = await axios.post(`${API_BASE_URL}/withdrawMoney`,
         null,
         {
           params: {

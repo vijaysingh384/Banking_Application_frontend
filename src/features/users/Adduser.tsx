@@ -10,6 +10,10 @@ const AddUser = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+
+
+  const API_BASE_URL = "https://banking-backend-re7q.onrender.com";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -21,8 +25,7 @@ const AddUser = () => {
           name,
       };
 
-      const response = await axios.post(
-        "http://localhost:8087/adduser",
+      const response = await axios.post(`${API_BASE_URL}/adduser`,
         user,
         {
           withCredentials: true,
